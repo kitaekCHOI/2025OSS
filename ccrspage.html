@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 첫 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-buttons button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .content button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>홈페이지 첫 페이지</h1>
+    <div class="tab-buttons">
+        <button onclick="showTab(0)">탭 1</button>
+        <button onclick="showTab(1)">탭 2</button>
+        <button onclick="showTab(2)">탭 3</button>
+    </div>
+    
+    <div id="tab1" class="tab active">
+        <h2>탭 1</h2>
+        <div class="content">
+            <script>
+                function openImage() {
+                    window.open("https://2025oss.netlify.app/img/mypic.png", "_blank");
+                }
+            </script>
+            <button onclick="openImage()">버튼 1</button>
+            <button>버튼 1</button>
+            <button>버튼 2</button>
+            <button>버튼 3</button>
+            <button>버튼 4</button>
+            <button>버튼 5</button>
+            <button>버튼 6</button>
+            <button>버튼 7</button>
+            <button>버튼 8</button>
+            <button>버튼 9</button>
+            <button>버튼 10</button>
+        </div>
+    </div>
+    
+    <div id="tab2" class="tab">
+        <h2>탭 2</h2>
+        <p>탭 2의 내용</p>
+    </div>
+    
+    <div id="tab3" class="tab">
+        <h2>탭 3</h2>
+        <p>탭 3의 내용</p>
+    </div>
+    
+    <script>
+        function showTab(index) {
+            var tabs = document.querySelectorAll(".tab");
+            tabs.forEach((tab, i) => {
+                tab.classList.remove("active");
+                if (i === index) {
+                    tab.classList.add("active");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
